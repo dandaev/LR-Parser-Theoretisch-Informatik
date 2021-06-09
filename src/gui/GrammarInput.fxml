@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GrammarInputController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="553.0" prefWidth="685.0" style="-fx-background-color: &quot;ffffff&quot;;">
+         <children>
+            <ComboBox fx:id="parser" layoutX="493.0" layoutY="29.0" prefHeight="25.0" prefWidth="111.0" promptText="Parser" />
+            <Label layoutX="71.0" layoutY="81.0" text="Перед тем как записать грамматику прочитайте следующие условия :" textFill="#ff0d00">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="103.0" layoutY="166.0" text="-ни одна из букв не должна быть названа S' (Так-как парсер сам пишет это)" />
+            <Label layoutX="103.0" layoutY="246.0" text="-для использования пустого значения просто напишите: 'epsilon'" />
+            <Label layoutX="102.0" layoutY="219.0" text="-для использования 'или' в правой части грамматики напишите символ '|'" />
+            <Label layoutX="102.0" layoutY="115.0" text="-все буквы и слова должны отделяться отступом(space)" />
+            <Label layoutX="102.0" layoutY="192.0" text="-используйте символ -&gt; чтобы разделить правую и левую часть грамматики" />
+            <TextArea fx:id="input" layoutX="71.0" layoutY="277.0" prefHeight="200.0" prefWidth="533.0" promptText="Пример:  S -&gt; A A      A -&gt; a A | b (каждую грамматику пишите в отдельной строке)" />
+            <Label layoutX="102.0" layoutY="139.0" text="-в левой части должен быть только один нетерминал" />
+            <Button layoutX="71.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleStart" text="Начать" />
+            <Label fx:id="error" layoutX="167.0" layoutY="505.0" text="error" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
